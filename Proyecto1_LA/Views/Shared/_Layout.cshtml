@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ventas ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header style="margin-left:20px;"">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <strong>@Html.ActionLink("Venta TECNO CR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</strong>
+                @*<a class="navbar-brand" href="#">Venta TECNO CR</a>*@
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    @*<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>*@
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administración <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Sub Categoria", "Index", "SubCategorias")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Productos", "Index", "Productoes")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Factura", "Index", "Facturas")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Ventas", "Index", "DetalleFacturas")</li>
+                            <li class="divider"></li>
+                           
+                </ul>
+                       
+                    </li>
+                    @*------------------------------------*@
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Computadoras <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="divider"></li>
+                            <li><a href="#">Gaming</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Hogar y Oficina</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Laptop</a></li>
+                            <li class="divider"></li>
+                        </ul>
+
+                    </li>*@
+                    @*  -----------------------*@
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Componentes <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="divider"></li>
+                            <li><a href="#">Procesadores</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Tarjeta Madre</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Memoria RAM</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Tarjetas de Video</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Almacenamiento</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Fuentes de Poder</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Enfriamiento</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Cases</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Monitores</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Ventiladores</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Reguladores y UPS</a></li>
+                            <li class="divider"></li>
+                        </ul>
+
+                    </li>*@
+                    @*------------------------------------*@
+                   @* <li class="dropdown">*@
+                        @*<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perifericos<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="divider"></li>
+                            <li><a href="#">Teclados</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Mouse</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Parlantes</a></li>
+                            <li class="divider"></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Combo Teclado y Mouse</a></li>
+                            <li class="divider"></li>
+                        </ul>*@
+
+                    @*</li>*@
+                    <li>@Html.ActionLink("Comprar", "Index", "Comprar")</li>
+                    <li>@Html.ActionLink("Lista Sugerencia", "Index", "Wishlists")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right:10px;">
+                    @Html.Partial("_LoginPartial")
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Diego Diaz</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

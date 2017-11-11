@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Proyecto1_LA.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Facturas</h2>
+
+<p>
+ 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_Venta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCreado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_Venta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreado)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.idFactura }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.idFactura }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.idFactura })*@
+        </td>
+    </tr>
+}
+
+</table>

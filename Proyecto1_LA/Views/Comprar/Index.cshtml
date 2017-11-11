@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Proyecto1_LA.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Productos</h2>
+
+@*@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Criterios de búsqueda</legend>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2">Buscar:</label>
+                <div class="col-md-10">
+                    <input type="text" name="inpBuscar" class="form-control"
+                           placeholder="Introduzca el texto de búsqueda" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <i class="fa fa-refresh" style="color:blue;"></i>
+                    <input type="submit" value="Filtrar" class="btn btn-default" id="btngetdata">
+                </div>
+            </div>
+        </div>
+        </fieldset>
+        }*@
+
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Criterios de búsqueda</legend>
+        @Html.Label("Buscar", "Nombre Producto:")
+        @Html.TextBox("inpBuscar")
+        @Html.Label("categorías:")
+        @Html.TextBox("idCategoria")
+        @Html.Label("rango de precio:")
+        @Html.TextBox("precio")
+        @Html.TextBox("precio2")
+
+        <input type="submit" value="Filtrar" class="btn btn-default" id="btngetdata">
+    </fieldset><br />
+}
+
+
+
+        <p>
+            Selecciones Agregar Al Carrito
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecioUnitario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categorias.Nombre)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioUnitario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categorias.Nombre)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Agregar al Carrito", "AgregarCarrito", "Carrito", new { id = item.idProducto }, null)
+                       
+                    </td>
+                </tr>
+            }
+
+        </table>
+        @*@Scripts.Render("~/bundles/jqueryval")*@
